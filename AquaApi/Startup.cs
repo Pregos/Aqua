@@ -20,7 +20,7 @@ namespace AquaApi
             services.AddDbContext<DypAquaContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DypAqua"]));
 
             //wstrzykiwanie zależności
-            //services.AddSingleton<IPomiarRepo, EFPomiarRepo>();
+            services.AddTransient<IRybkaRepository, EFRybkaRepository>();
 
             //MVC
             services.AddMvc();
